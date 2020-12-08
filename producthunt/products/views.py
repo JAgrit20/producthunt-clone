@@ -5,8 +5,10 @@ from .models import Product
 # Create your views here.
 
 
+
 def home(request):
-    return render(request, 'products/home.html')
+    products = Product.objects
+    return render(request, 'products/home.html',{'products':products})
     # //if they are now login then you cant create a page
 
 
