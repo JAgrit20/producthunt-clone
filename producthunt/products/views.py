@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.utils import timezone
 from .models import Product
@@ -27,9 +27,13 @@ def create(request):
                 product.votes_total = 1
                 product.hunter = request.user
                 product.save()
-                return redirect('home')
+                return redirect('/products/'+ str(product.id))
 
 
         return render(request, 'products/create.html',{'error':'All fields are required'})
     else:
         return render(request, 'products/create.html')
+def details(request,product_id):
+    product = get_object_or_404(Product,pk=product_id)
+
+    return render(request,'products/detail.html',{'product':product})

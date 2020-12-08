@@ -17,9 +17,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Jekyll v4.1.1">
+    
     <title>Jagrit Acharya</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/album/">
@@ -71,8 +69,8 @@
           <div class="navbar-nav ml-auto">
             {% if user.is_authenticated %}
           
-            <a class="nav-item nav-link" href="{% url 'create' %}"> <span class="oi" data-glyph="plus">Create</span> </a>
-            <a class="nav-item nav-link" href="javascript:{document.getElementById('logout').submit()}" onclick="">   Logout</a>
+            <a class="nav-item nav-link" href="{% url 'create' %}"> <i class=" material-icons large">add</i></a>
+            <a class="nav-item nav-link" href="javascript:{document.getElementById('logout').submit()}" onclick="">Logout</a>
             <form id="logout" method="POST" action="{% url 'logout' %}">
               {% csrf_token %}
               <input type="hidden" />
