@@ -8,58 +8,24 @@
 <br />
 {% endif %}
 
-<style>
-   body {
-  background-color: #121721;
-}
-
-.heade{
-    align-self: center;
-
-}
-
-</style>
-
-    
-    
-
-<h1 style="color:White;" class="heade center-align ">Sign Up!</h1>
-  <div class="row final" style="padding-bottom:20px">
-
-<form class="col s12 " method="POST" action="{% url 'signup' %}">
+<h1>Create</h1>
+<!-- ectype use to send data to database using forms -->
+<form method="POST" action="{% url 'create' %}" enctype="multipart/form-data" >
 {% csrf_token %}
-
-<div class="container white light-2 final" style="padding-bottom: 20px;" id="textF">
-<div class="row  final " >
-    <div class="input-field col s5" >
-      <i class="material-icons prefix">account_circle</i>
-      <input type="text" name="username" />
-      <label for="icon_prefix">Username</label>
-    </div>
-</div>  
-
-<div class="row">
-    <div class="input-field col s6">
-      <i class="material-icons prefix">lock</i>
-      <input type="password" name="password1" />
-      <label for="icon_prefix">Password</label>
-    </div>
-</div> 
-<div class="row">
-    <div class="input-field col s6">
-      <i class="material-icons prefix">lock</i>
-      <input type="password" name="password2" />
-      <label for="icon_prefix">Confirm Password</label>
-    </div>
-</div> 
+Username:
 <br />
-<button  class="btn waves-effect blue light-2" type="submit" name="action">Sign Up!
-    <i class="material-icons right">send</i>
-  </button>
-<!-- <input class="btn btn-primary" type="submit" value="" /> -->
+<input type="text" name="username" />
+<br />
+Password:
+<br />
+<input type="password" name="password1" />
+<br />
+Confirm Password:
+<br />
+<input type="password" name="password2" />
+<br />
+<br />
+<input class="btn btn-primary" type="submit" value="Sign Up!" />
 </form>
-</div>
-</div>
-
 
 {% endblock %}
